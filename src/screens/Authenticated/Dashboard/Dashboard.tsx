@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import PrimaryButton from "../../../components";
+import { clearStorage } from "../../../utils/storage";
+import { useDispatch } from "react-redux";
+import { setAuthentication } from "../../../utils/redux";
 
 const Dashboard = () => {
-  return (
-    <div>Dashboard</div>
-  )
-}
+  const dispatch = useDispatch();
 
-export default Dashboard
+  const onLogout = () => {
+    clearStorage();
+    dispatch(setAuthentication(null));
+  };
+
+  return (
+    <div>
+      <div>Dashboard </div>
+
+      <PrimaryButton onClick={onLogout}>Logout</PrimaryButton>
+    </div>
+  );
+};
+
+export default Dashboard;

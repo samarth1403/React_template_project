@@ -5,7 +5,6 @@ import { logoutUser } from "../validators/HelperFunctions";
 const axiosInstance = Axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL,
   headers: { "Content-Type": "application/json" },
-  params: { lang: "en_IN" },
 });
 axiosInstance.defaults.timeout = 300000;
 
