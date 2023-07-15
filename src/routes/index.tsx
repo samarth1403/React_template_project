@@ -1,21 +1,21 @@
-import { Route, Routes as Switch, BrowserRouter, useLocation } from "react-router-dom";
+import {
+  Route,
+  Routes as Switch,
+  BrowserRouter,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import { Grid, Paper, useTheme } from "@mui/material";
 
 // import components 
 import Dashboard from "../screens/Authenticated/Dashboard/Dashboard";
 import Login from "../screens/Authentication/Login";
-import Add from "../screens/Authenticated/Add/Add";
-
 import { Authenticated } from "../utils/redux/reducer/authentication-slice";
 import { FC } from "react";
 import { useSelector } from "react-redux";
 import AuthenticatedLayout from "./AuthenticatedLayout";
-import { Navigate } from "react-router-dom";
 import MyRoot from "./MyRoot";
-
 import { routes } from "../utils/constants/routes";
-
-
 
 const Root: FC = () => {
     const isLogin = useSelector(Authenticated);
@@ -33,7 +33,7 @@ const AuthenticatedScreens: FC<{ Component: FC }> = ({ Component }) => {
         <AuthenticatedLayout Component={Component} />
     ) : (
         <Navigate to={'/'} />
-    );
+    )
 };
 
 const Routes = () => {
@@ -58,17 +58,10 @@ const Routes = () => {
                             path="/dashboard"
                             element={<AuthenticatedScreens Component={Dashboard} />}
                         />
-                        
-                         <Route
-                            path="/add"
-                            element={<AuthenticatedScreens Component={Add} />}
-                        /> 
-
                         <Route
                             path="/myroot"
                             element={<AuthenticatedScreens Component={MyRoot} />}
                         />
-
                         {/* <Route path = "/myroot" element = {<MyRoot/>}></Route> */}
                     </Switch>
                 </Paper>

@@ -1,6 +1,5 @@
 import { Button, useTheme } from "@mui/material";
 import React, { FC } from "react";
-import { ToolTip } from "../Tooltip/ToolTip";
 import "./styles.css";
 
 type PrimaryButtonProps = {
@@ -31,7 +30,6 @@ const PrimaryButton: FC<PrimaryButtonProps> = ({
 }) => {
   const theme = useTheme();
   return (
-    <ToolTip title={tooltipInfo}>
       <Button
         type={type}
 
@@ -52,7 +50,6 @@ const PrimaryButton: FC<PrimaryButtonProps> = ({
       >
         {children}
       </Button>
-    </ToolTip>
   );
 };
 export default PrimaryButton;
