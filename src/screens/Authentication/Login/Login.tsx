@@ -45,27 +45,30 @@ const Login = () => {
         flex: 1,
         height: "100vh",
         justifyContent: "center",
+        backgroundColor: "#EAEAEA",
       }}
     >
-      <div>Login</div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", width: 500 }}>
-          <div>Enter you email : </div>
-          <input
-            onChange={(event: any) => setEmail(event.target.value)}
-          ></input>
-          <div>Enter you password : </div>
-          <input
-            type={"password"}
-            onChange={(event: any) => setPassword(event.target.value)}
-          ></input>
-          <PrimaryButton onClick={onSubmit}>CLICK ME</PrimaryButton>
+      <div>
+        <div>Login</div>
+        <div>to get started</div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ display: "flex", flexDirection: "column", width: 500 }}>
+            <input
+              onChange={(event: any) => setEmail(event.target.value)}
+            ></input>
+            <div>Enter you password : </div>
+            <input
+              type={"password"}
+              onChange={(event: any) => setPassword(event.target.value)}
+            ></input>
+            <PrimaryButton onClick={onSubmit}>CLICK ME</PrimaryButton>
+          </div>
         </div>
       </div>
     </div>
