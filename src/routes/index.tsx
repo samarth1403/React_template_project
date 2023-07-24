@@ -6,7 +6,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Grid, Paper, useTheme } from "@mui/material";
-
 // import components 
 import Dashboard from "../screens/Authenticated/Dashboard/Dashboard";
 import Login from "../screens/Authentication/Login";
@@ -21,6 +20,7 @@ const Root: FC = () => {
     const isLogin = useSelector(Authenticated);
     let location = useLocation();   // current url
     const { from } = location.state || { from: { pathname: "/dashboard" } };
+    console.log("FROM ", from);
     return isLogin ? <Navigate to={from} /> : <Navigate to={'/login'} />
 };
 
